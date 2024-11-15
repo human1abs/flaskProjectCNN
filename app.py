@@ -1,12 +1,11 @@
-import requests
 from decouple import config
-from flask import jsonify, render_template
+from flask import jsonify
 
 from config import create_app
 from db import db
 
-env = config('CONFIG_ENV')
-app = create_app(env)
+
+app = create_app(config('config.DevelopmentConfig'))
 
 
 @app.teardown_request
